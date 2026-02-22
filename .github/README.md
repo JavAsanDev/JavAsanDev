@@ -592,6 +592,480 @@
 
 ## 📈 Actividad Reciente
 
+## 📈 Actividad Reciente
+
+<!--RECENT_ACTIVITY:start-->
+### 🚀 Últimos Commits
+- Initial commit (hace 8 minutos ago)
+
+### 📊 Estadísticas Semanales
+- 💻 **Commits esta semana**: 1
+- 🔥 **Líneas de código**: +0 / -0
+- 📦 **Repositorios activos**: 1
+- 🌟 **Estrellas del repositorio**: 0
+
+<!--RECENT_ACTIVITY:end-->
+<!--RECENT_ACTIVITY:last_update-->
+**Última actualización**: Domingo, 22 de Febrero de 2026,  6:55:46 PM
+<!--RECENT_ACTIVITY:last_update_end-->
+
+---
+
+## 📊 Estadísticas de GitHub
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=JavAsan01&show_icons=true&theme=dark&hide=prs" alt="Estadísticas de GitHub de JavAsan01" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JavAsan01&layout=compact&theme=dark" alt="Lenguajes más usados por JavAsan01" />
+</p>
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=JavAsan01&theme=dark&hide_border=false" alt="Racha de contribuciones de JavAsan01" />
+</p>
+
+---
+
+## 🏆 Trofeos de GitHub
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=JavAsan01&theme=dracula&no-frame=true&no-bg=false&margin-w=4" alt="Trofeos de GitHub" />
+</p>
+
+---
+
+## 🔝 Repositorios con más contribuciones
+
+<p align="center">
+  <img src="https://github-contributor-stats.vercel.app/api?username=JavAsan01&limit=5&theme=dark&combine_all_yearly_contributions=true" alt="Repositorios más contribuido" />
+</p>
+
+---
+
+## ✍️ Cita Aleatoria de Desarrollador
+
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" alt="Cita aleatoria de desarrollador" />
+</p>
+
+---
+
+## 💰 Apóyame
+
+<div style="text-align: center; font-family: sans-serif;">
+  <p>¿Te han servido alguno de mis proyectos o guías?</p>
+  <p>Si quieres apoyarme para que pueda seguir desarrollando y creando contenido, puedes invitarme un café ☕...</p>
+  <p><strong>¡Cada aporte me motiva y se agradece muchísimo! 💖</strong></p>
+</div>
+
+<p align="center">
+  <a href="https://buymeacoffee.com/JavAsan01">
+    <img src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black" alt="Buy Me A Coffee">
+  </a>
+</p>
+
+---
+
+<div align="center">
+  💭 <i>"El código limpio no se escribe siguiendo un conjunto de reglas. El profesionalismo y la artesanía provienen de valores que impulsan disciplinas."</i><br>
+  📍 <strong>Ecuador 🇪🇨 </strong><br>
+  ⭐️ <sub>By Javier Asanza | Hecho con 💙 y muchas ☕</sub>
+</div>
+
+<br>
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=JavAsan01&label=Profile%20Views&color=blue&style=flat" alt="Visitas al perfil" />
+</p>
+
+---
+
+---
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
+## 📈 Actividad Reciente
+
 <!--RECENT_ACTIVITY:start-->
 ### 🚀 Últimos Commits
 - 🤖 Actualización automática de actividad reciente (hace 4 horas ago)
