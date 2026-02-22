@@ -2,9 +2,8 @@ name: 🚀 Actualizar Actividad Reciente
 
 on:
   schedule:
-    # Se ejecuta cada 4 horas
     - cron: '0 */4 * * *'
-  workflow_dispatch: # Permite ejecutar manualmente
+  workflow_dispatch:
   push:
     branches: [ main ]
 
@@ -14,104 +13,128 @@ jobs:
     permissions:
       contents: write
       actions: read
-    
+
     steps:
     - name: 📥 Checkout repository
       uses: actions/checkout@v4
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        fetch-depth: 50
-    
+        fetch-depth: 0  # Historial completo para estadísticas correctas
+
     - name: 📊 Obtener estadísticas de actividad
       id: stats
       run: |
-        # Obtener commits recientes con emojis
-        COMMITS=$(git log --oneline -n 5 --pretty=format:"- %s (hace %cr)" | \
-          sed 's/hace \([0-9]\+\) second/hace \1 segundo/g' | \
-          sed 's/hace \([0-9]\+\) minute/hace \1 minuto/g' | \
-          sed 's/hace \([0-9]\+\) hour/hace \1 hora/g' | \
-          sed 's/hace \([0-9]\+\) day/hace \1 día/g' | \
-          sed 's/hace \([0-9]\+\) week/hace \1 semana/g')
-        
-        # Estadísticas de la semana
+        # ── Últimos 5 commits (tiempo relativo traducido al español) ──────────
+        translate_time() {
+          echo "$1" \
+            | sed -E 's/([0-9]+) seconds? ago/hace \1 segundos/g' \
+            | sed -E 's/([0-9]+) minutes? ago/hace \1 minutos/g' \
+            | sed -E 's/([0-9]+) hours? ago/hace \1 horas/g' \
+            | sed -E 's/([0-9]+) days? ago/hace \1 días/g' \
+            | sed -E 's/([0-9]+) weeks? ago/hace \1 semanas/g' \
+            | sed -E 's/([0-9]+) months? ago/hace \1 meses/g' \
+            | sed -E 's/a minute ago/hace 1 minuto/g' \
+            | sed -E 's/an hour ago/hace 1 hora/g' \
+            | sed -E 's/a day ago/hace 1 día/g' \
+            | sed -E 's/a week ago/hace 1 semana/g' \
+            | sed -E 's/a month ago/hace 1 mes/g'
+        }
+
+        RAW_COMMITS=$(git log --oneline -n 5 --pretty=format:"- %s (%ar)")
+        COMMITS=$(translate_time "$RAW_COMMITS")
+
+        # ── Commits de la última semana ───────────────────────────────────────
         WEEK_COMMITS=$(git rev-list --count --since="1 week ago" HEAD)
-        
-        # Líneas agregadas/eliminadas esta semana
-        LINES_STATS=$(git diff --shortstat HEAD~$WEEK_COMMITS HEAD 2>/dev/null || echo "0 files changed, 0 insertions(+), 0 deletions(-)")
-        INSERTIONS=$(echo "$LINES_STATS" | grep -o '[0-9]\+ insertion' | grep -o '[0-9]\+' || echo "0")
-        DELETIONS=$(echo "$LINES_STATS" | grep -o '[0-9]\+ deletion' | grep -o '[0-9]\+' || echo "0")
-        
-        # Repositorios con actividad reciente (contamos las ramas locales)
+
+        # ── Líneas agregadas/eliminadas ───────────────────────────────────────
+        INSERTIONS=0
+        DELETIONS=0
+        if [ "$WEEK_COMMITS" -gt 0 ]; then
+          LINES_STATS=$(git diff --shortstat "HEAD~${WEEK_COMMITS}" HEAD 2>/dev/null || true)
+          if [ -n "$LINES_STATS" ]; then
+            INSERTIONS=$(echo "$LINES_STATS" | grep -oP '\d+(?= insertion)' || echo "0")
+            DELETIONS=$(echo "$LINES_STATS"  | grep -oP '\d+(?= deletion)'  || echo "0")
+          fi
+        fi
+
+        # ── Ramas remotas ─────────────────────────────────────────────────────
         ACTIVE_REPOS=$(git branch -r 2>/dev/null | wc -l || echo "1")
-        
-        # Obtener número de estrellas del repositorio (si está disponible)
-        STARS=$(curl -s "https://api.github.com/repos/${{ github.repository }}" | grep '"stargazers_count"' | grep -o '[0-9]\+' || echo "0")
-        
-        # Fecha en español
-        CURRENT_DATE=$(date -u "+%A, %d de %B de %Y, %l:%M:%S %p" | \
-          sed 's/Monday/Lunes/g; s/Tuesday/Martes/g; s/Wednesday/Miércoles/g; s/Thursday/Jueves/g; s/Friday/Viernes/g; s/Saturday/Sábado/g; s/Sunday/Domingo/g' | \
-          sed 's/January/Enero/g; s/February/Febrero/g; s/March/Marzo/g; s/April/Abril/g; s/May/Mayo/g; s/June/Junio/g; s/July/Julio/g; s/August/Agosto/g; s/September/Septiembre/g; s/October/Octubre/g; s/November/Noviembre/g; s/December/Diciembre/g')
-        
-        # Generar output para GitHub Actions
+
+        # ── Estrellas del repositorio ─────────────────────────────────────────
+        STARS=$(curl -sf "https://api.github.com/repos/${{ github.repository }}" \
+          | grep -oP '(?<="stargazers_count": )\d+' || echo "0")
+
+        # ── Fecha en español ──────────────────────────────────────────────────
+        CURRENT_DATE=$(date -u "+%A, %d de %B de %Y, %H:%M:%S UTC" \
+          | sed 's/Monday/Lunes/; s/Tuesday/Martes/; s/Wednesday/Miércoles/
+                 s/Thursday/Jueves/; s/Friday/Viernes/; s/Saturday/Sábado/; s/Sunday/Domingo/' \
+          | sed 's/January/Enero/; s/February/Febrero/; s/March/Marzo/; s/April/Abril/
+                 s/May/Mayo/; s/June/Junio/; s/July/Julio/; s/August/Agosto/
+                 s/September/Septiembre/; s/October/Octubre/; s/November/Noviembre/; s/December/Diciembre/')
+
+        # ── Exportar outputs ──────────────────────────────────────────────────
         {
           echo "commits<<EOF"
           echo "$COMMITS"
           echo "EOF"
           echo "week_commits=$WEEK_COMMITS"
-          echo "insertions=$INSERTIONS"
-          echo "deletions=$DELETIONS"
+          echo "insertions=${INSERTIONS:-0}"
+          echo "deletions=${DELETIONS:-0}"
           echo "active_repos=$ACTIVE_REPOS"
           echo "stars=$STARS"
           echo "current_date=$CURRENT_DATE"
-        } >> $GITHUB_OUTPUT
-    
+        } >> "$GITHUB_OUTPUT"
+
     - name: ✏️ Actualizar README con nueva actividad
       run: |
-        # Crear nueva sección de actividad
-        cat > new_activity.md << 'EOF'
-        ## 📈 Actividad Reciente
-        
-        <!--RECENT_ACTIVITY:start-->
+        README=".github/README.md"
+
+        # ── Construir bloque de actividad ─────────────────────────────────────
+        # IMPORTANTE: sin indentación para que el markdown quede limpio
+        ACTIVITY_BLOCK="<!--RECENT_ACTIVITY:start-->
         ### 🚀 Últimos Commits
         ${{ steps.stats.outputs.commits }}
-        
+
         ### 📊 Estadísticas Semanales
-        - 💻 **Commits esta semana**: ${{ steps.stats.outputs.week_commits }}
-        - 🔥 **Líneas de código**: +${{ steps.stats.outputs.insertions }} / -${{ steps.stats.outputs.deletions }}
-        - 📦 **Repositorios activos**: ${{ steps.stats.outputs.active_repos }}
-        - 🌟 **Estrellas del repositorio**: ${{ steps.stats.outputs.stars }}
-        
+        | Métrica | Valor |
+        |---|---|
+        | 💻 Commits esta semana | ${{ steps.stats.outputs.week_commits }} |
+        | 🔥 Líneas agregadas | +${{ steps.stats.outputs.insertions }} |
+        | 🗑️ Líneas eliminadas | -${{ steps.stats.outputs.deletions }} |
+        | 📦 Ramas remotas | ${{ steps.stats.outputs.active_repos }} |
+        | 🌟 Estrellas | ${{ steps.stats.outputs.stars }} |
+
         <!--RECENT_ACTIVITY:end-->
         <!--RECENT_ACTIVITY:last_update-->
         **Última actualización**: ${{ steps.stats.outputs.current_date }}
-        <!--RECENT_ACTIVITY:last_update_end-->
-        EOF
-        
-        # Verificar si ya existe la sección en .github/README.md
-        if grep -q "<!--RECENT_ACTIVITY:start-->" .github/README.md; then
+        <!--RECENT_ACTIVITY:last_update_end-->"
+
+        if grep -q "<!--RECENT_ACTIVITY:start-->" "$README"; then
           echo "🔄 Actualizando sección existente..."
-          # Crear archivo temporal con el contenido antes de la sección
-          sed '/<!--RECENT_ACTIVITY:start-->/,$d' .github/README.md > temp_before.md
-          # Crear archivo temporal con el contenido después de la sección
-          sed -n '/<!--RECENT_ACTIVITY:last_update_end-->/,$p' .github/README.md | tail -n +2 > temp_after.md
-          # Combinar todo
-          cat temp_before.md new_activity.md temp_after.md > .github/README.md
-          rm temp_before.md temp_after.md
+
+          # Todo antes del marcador de inicio (sin incluirlo)
+          BEFORE=$(sed '/<!--RECENT_ACTIVITY:start-->/,$d' "$README")
+
+          # Todo después del marcador de fin de última actualización (sin incluirlo)
+          AFTER=$(awk '/<!--RECENT_ACTIVITY:last_update_end-->/{found=1; next} found{print}' "$README")
+
+          # Reconstruir el archivo
+          {
+            printf '%s\n' "$BEFORE"
+            printf '%s\n' "$ACTIVITY_BLOCK"
+            [ -n "$AFTER" ] && printf '%s\n' "$AFTER"
+          } > "$README"
+
         else
           echo "➕ Agregando nueva sección al final..."
-          echo "" >> .github/README.md
-          echo "---" >> .github/README.md
-          echo "" >> .github/README.md
-          cat new_activity.md >> .github/README.md
+          printf '\n---\n\n## 📈 Actividad Reciente\n\n%s\n' "$ACTIVITY_BLOCK" >> "$README"
         fi
-        
-        rm new_activity.md
-    
+
     - name: 🚀 Commit y Push de cambios
       run: |
         git config --local user.email "javasan.dev@gmail.com"
-        git config --local user.name "JavAsan01"
-        
+        git config --local user.name "JavAsanDev"
+
         if git diff --quiet; then
           echo "✅ No hay cambios para commitear"
         else
