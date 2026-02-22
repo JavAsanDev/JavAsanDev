@@ -90,44 +90,51 @@ jobs:
         README=".github/README.md"
 
         # ── Construir bloque de actividad ─────────────────────────────────────
-        # IMPORTANTE: sin indentación para que el markdown quede limpio
-        ACTIVITY_BLOCK="<!--RECENT_ACTIVITY:start-->
+        # El encabezado está DENTRO para evitar duplicados fuera del bloque
+        export ACTIVITY_BLOCK="<!--RECENT_ACTIVITY:start-->
+        ## 📈 Actividad Reciente
+
         ### 🚀 Últimos Commits
         ${{ steps.stats.outputs.commits }}
 
         ### 📊 Estadísticas Semanales
-        | Métrica | Valor |
-        |---|---|
-        | 💻 Commits esta semana | ${{ steps.stats.outputs.week_commits }} |
-        | 🔥 Líneas agregadas | +${{ steps.stats.outputs.insertions }} |
-        | 🗑️ Líneas eliminadas | -${{ steps.stats.outputs.deletions }} |
-        | 📦 Ramas remotas | ${{ steps.stats.outputs.active_repos }} |
-        | 🌟 Estrellas | ${{ steps.stats.outputs.stars }} |
+        - 💻 **Commits esta semana**: ${{ steps.stats.outputs.week_commits }}
+        - 🔥 **Líneas de código**: +${{ steps.stats.outputs.insertions }} / -${{ steps.stats.outputs.deletions }}
+        - 📦 **Repositorios activos**: ${{ steps.stats.outputs.active_repos }}
+        - 🌟 **Estrellas del repositorio**: ${{ steps.stats.outputs.stars }}
 
-        <!--RECENT_ACTIVITY:end-->
-        <!--RECENT_ACTIVITY:last_update-->
         **Última actualización**: ${{ steps.stats.outputs.current_date }}
-        <!--RECENT_ACTIVITY:last_update_end-->"
+        <!--RECENT_ACTIVITY:end-->"
 
         if grep -q "<!--RECENT_ACTIVITY:start-->" "$README"; then
           echo "🔄 Actualizando sección existente..."
+          python3 -c "
+        import os
+        import re
+        import sys
 
-          # Todo antes del marcador de inicio (sin incluirlo)
-          BEFORE=$(sed '/<!--RECENT_ACTIVITY:start-->/,$d' "$README")
+        readme_path = '$README'
+        activity_block = os.environ['ACTIVITY_BLOCK']
 
-          # Todo después del marcador de fin de última actualización (sin incluirlo)
-          AFTER=$(awk '/<!--RECENT_ACTIVITY:last_update_end-->/{found=1; next} found{print}' "$README")
+        with open(readme_path, 'r', encoding='utf-8') as f:
+            content = f.read()
 
-          # Reconstruir el archivo
-          {
-            printf '%s\n' "$BEFORE"
-            printf '%s\n' "$ACTIVITY_BLOCK"
-            [ -n "$AFTER" ] && printf '%s\n' "$AFTER"
-          } > "$README"
-
+        # Patrón para encontrar el bloque completo (multilínea)
+        pattern = r'<!--RECENT_ACTIVITY:start-->.*?<!--RECENT_ACTIVITY:end-->'
+        
+        if re.search(pattern, content, re.DOTALL):
+            # Reemplazamos el bloque existente
+            new_content = re.sub(pattern, activity_block, content, flags=re.DOTALL)
+            with open(readme_path, 'w', encoding='utf-8') as f:
+                f.write(new_content)
+            print('✅ Bloque actualizado con éxito.')
+        else:
+            print('⚠️ Marcadores encontrados por grep pero no por regex. Reintentando apéndice...')
+            sys.exit(1)
+        " || (echo "➕ Agregando al final por fallo de regex..." && printf '\n---\n\n%s\n' "$ACTIVITY_BLOCK" >> "$README")
         else
           echo "➕ Agregando nueva sección al final..."
-          printf '\n---\n\n## 📈 Actividad Reciente\n\n%s\n' "$ACTIVITY_BLOCK" >> "$README"
+          printf '\n---\n\n%s\n' "$ACTIVITY_BLOCK" >> "$README"
         fi
 
     - name: 🚀 Commit y Push de cambios
