@@ -132,33 +132,53 @@
 
 ## 📊 Estadísticas de GitHub
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=JavAsanDev&show_icons=true&theme=dark&hide=prs" alt="Estadísticas de GitHub de JavAsanDev" />
-</p>
+<div align="center">
 
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JavAsanDev&layout=compact&theme=dark" alt="Lenguajes más usados por JavAsanDev" />
-</p>
+![Estadísticas generales](https://github-readme-stats.vercel.app/api?username=JavAsanDev&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&rank_icon=github)
 
-<p align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=JavAsanDev&theme=dark&hide_border=false" alt="Racha de contribuciones de JavAsanDev" />
-</p>
+</div>
+
+<div align="center">
+
+![Lenguajes más usados](https://github-readme-stats.vercel.app/api/top-langs/?username=JavAsanDev&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&langs_count=8)
+
+</div>
+
+<div align="center">
+
+![Racha de contribuciones](https://streak-stats.demolab.com/?user=JavAsanDev&theme=tokyonight&hide_border=true&background=0d1117&ring=58a6ff&fire=ff6b6b&currStreakLabel=58a6ff&sideLabels=c9d1d9&dates=8b949e)
+
+</div>
 
 ---
 
 ## 🏆 Trofeos de GitHub
 
-<p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=JavAsanDev&theme=dracula&no-frame=true&no-bg=false&margin-w=4" alt="Trofeos de GitHub" />
-</p>
+<div align="center">
+
+![Trofeos](https://github-profile-trophy.vercel.app/?username=JavAsanDev&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&column=7)
+
+</div>
 
 ---
 
-## 🔝 Repositorios con más contribuciones
+## 📈 Gráfico de actividad
 
-<p align="center">
-  <img src="https://github-contributor-stats.vercel.app/api?username=JavAsanDev&limit=5&theme=dark&combine_all_yearly_contributions=true" alt="Repositorios más contribuido" />
-</p>
+<div align="center">
+
+[![Gráfico de actividad](https://github-readme-activity-graph.vercel.app/graph?username=JavAsanDev&bg_color=0d1117&color=58a6ff&line=58a6ff&point=c9d1d9&area=true&hide_border=true)](https://github.com/JavAsanDev)
+
+</div>
+
+---
+
+## 🔝 Repositorios destacados
+
+<div align="center">
+
+[![Repositorios más contribuidos](https://github-contributor-stats.vercel.app/api?username=JavAsanDev&limit=5&theme=tokyonight&combine_all_yearly_contributions=true&hide_border=true)](https://github.com/JavAsanDev)
+
+</div>
 
 ---
 
