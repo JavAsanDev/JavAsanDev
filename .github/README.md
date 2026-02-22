@@ -150,13 +150,15 @@
 
 <div align="center">
 
-![Estadísticas generales](https://github-readme-stats.vercel.app/api?username=JavAsanDev&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&rank_icon=github)
+<!-- Stats generales — cache_seconds alto para evitar rate limit -->
+![Estadísticas generales](https://github-readme-stats.vercel.app/api?username=JavAsanDev&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true&bg_color=0d1117&title_color=58a6ff&icon_color=58a6ff&text_color=c9d1d9&rank_icon=github&cache_seconds=1800)
 
 </div>
 
 <div align="center">
 
-![Lenguajes más usados](https://github-readme-stats.vercel.app/api/top-langs/?username=JavAsanDev&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&langs_count=8)
+<!-- Lenguajes — cache alta -->
+![Lenguajes más usados](https://github-readme-stats.vercel.app/api/top-langs/?username=JavAsanDev&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=58a6ff&text_color=c9d1d9&langs_count=8&cache_seconds=1800)
 
 </div>
 
@@ -172,7 +174,8 @@
 
 <div align="center">
 
-![Trofeos](https://github-profile-trophy.vercel.app/?username=JavAsanDev&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&column=7)
+<!-- column=-1 = auto ajuste según trofeos obtenidos -->
+![Trofeos](https://github-profile-trophy.vercel.app/?username=JavAsanDev&theme=tokyonight&no-frame=true&no-bg=true&margin-w=8&column=-1)
 
 </div>
 
